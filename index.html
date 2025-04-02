@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You've Been Hacked!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #000;
+            color: red;
+        }
+        .container {
+            background: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255,0,0,0.5);
+            display: inline-block;
+        }
+        h1 {
+            color: red;
+        }
+        p {
+            font-size: 20px;
+            color: white;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YOU'VE BEEN HACKED!</h1>
+        <p>Your IP Address: <span id="ip"></span></p>
+        <button class="button" onclick="removeIP()">Click to remove your IP from hacker's database</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function getRandomIP() {
+            return `${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`;
+        }
+        document.getElementById("ip").innerText = getRandomIP();
+
+        function removeIP() {
+            document.getElementById("ip").innerText = "[REMOVED]";
+            document.getElementById("message").innerText = "Happy April Fools! It's just a prank! 🎭😂";
+        }
+    </script>
+</body>
+</html>
